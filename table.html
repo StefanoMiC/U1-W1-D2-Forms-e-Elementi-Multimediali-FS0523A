@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>D2 Tabelle</title>
+    <style>
+        table {
+            width: 100%;
+        }
+
+        th {
+            background-color: black;
+            color: white;
+        }
+
+        th,
+        td {
+            border: 1px solid black
+        }
+    </style>
+</head>
+
+<body>
+
+    <table>
+        <caption>Tabella utenti</caption>
+        <!-- tr sta per table row, è una riga contenente celle, sia di intestazione che di dati -->
+
+        <thead>
+            <tr>
+                <!-- table header cell - cella di intestazione -->
+                <th>id</th>
+                <th>nome</th>
+                <th>cognome</th>
+                <th>indirizzo</th>
+                <th>telefono</th>
+            </tr>
+        </thead>
+        <!-- nuova riga -->
+        <tbody>
+            <tr>
+                <!-- rowspan permette ad una cella di espandersi verso il basso per più righe in verticale -->
+                <td rowspan="3">12983</td>
+                <td>Mario</td>
+                <td>Rossi</td>
+                <td>via dei bardi 6</td>
+                <td>3467788992</td>
+            </tr>
+            <tr>
+
+                <td>Luigi</td>
+                <td>Verdi</td>
+                <td>via tali 6</td>
+                <td>3467788992</td>
+            </tr>
+            <tr>
+                <!-- colspan permette ad una cella di occupare più di uno spazio in orizzontale -->
+                <td colspan="2">Stefano</td>
+                <!-- se mancasse un dato è sempre meglio renderizzare un elemento td vuoto -->
+                <!-- <td></td> -->
+                <!-- in altertiva, possiamo usare degli attributi sul td precedente -->
+                <td>via tal dei tali 6</td>
+                <td>3467788992</td>
+            </tr>
+        </tbody>
+    </table>
+
+</body>
+
+</html>
