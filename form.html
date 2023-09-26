@@ -1,0 +1,116 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>D2 Forms</title>
+</head>
+
+<body>
+
+    <!-- l'elemento form racchiude l'area del modulo di invio di informazioni da parte dell'utente -->
+    <form>
+        <!-- nel caso vogliamo collegare la label al suo corrispettivo input, 
+        dovremo premurarci di avere un id sull'input e usare lo stesso valore anche nell'attributo for della label -->
+        <fieldset>
+            <legend>Area Nome</legend>
+            <label for="nome-utente">Nome</label>
+            <!-- non usare un attributo di input type, implicherà averlo impostato a type="text" di default -->
+            <input type="text" id="nome-utente" placeholder="Inserisci il tuo nome breve">
+            <!-- <br /> -->
+            <label for="cognome-utente">Cognome</label>
+            <input type="text" id="cognome-utente" placeholder="Inserisci il cognome">
+        </fieldset>
+        <fieldset>
+            <legend>Area Età</legend>
+            <label for="eta-utente">Età</label>
+            <input type="number" id="eta-utente" placeholder="0" max="100">
+        </fieldset>
+        <fieldset>
+            <legend>Area disponibilità</legend>
+            <label for="data-utente">Prima disponibilità</label>
+            <input type="datetime-local" id="data-utente">
+        </fieldset>
+
+        <!-- modo antico per creare un bottone di tipo submit, il value è il testo interno al bottone -->
+        <input type="submit" value="bottone come input" />
+
+        <!-- un bottone inserito dentro un form ha il ruolo di inviatore di dati -->
+        <!-- di default il suo type è impostato a "submit" -->
+        <!-- <button>Invia i dati</button>  <== se non impostato quindi sarà comunque "submit" -->
+        <button type="submit">Invia i dati</button>
+        <!-- il type reset pulisce tutti i campi del form -->
+        <button type="reset">Resetta i dati</button>
+        <!-- il type button può diventare qualsiasi cosa (!!! se non presente farà l'invio del form !!!) -->
+        <button type="button">Bottone inerte o generico</button>
+    </form>
+
+    <br />
+    <br />
+    <br />
+    <br />
+
+    <form>
+        <fieldset>
+            <legend>Prenotazione</legend>
+            <div>
+                <label for="nome-prenotazione">Nome</label>
+                <input type="text" id="nome-prenotazione" placeholder="Inserisci il nome per la prenotazione" required>
+            </div>
+            <div>
+                <label for="numero-persone">Numero di persone</label>
+                <input type="number" id="numero-persone" placeholder="0" max="12" required>
+            </div>
+            <hr />
+            <div>
+                <input type="checkbox" id="fumatori" checked>
+                <label for="fumatori">Fumatori</label>
+            </div>
+            <hr />
+            <div>
+                <label for="ora-arrivo">Ora di arrivo</label>
+                <input type="time" id="ora-arrivo" required>
+            </div>
+            <hr />
+            <div>
+                <!-- nel caso di input di tipo "radio" il nome è fondamentale per mantenere la funzionalità di valore esclusivo su un unico campo alla volta -->
+                <label for="auto">Auto</label>
+                <input type="radio" name="veicolo" id="auto" checked>
+                <label for="moto">Moto</label>
+                <input type="radio" name="veicolo" id="moto">
+                <label for="bici">Bicicletta</label>
+                <input type="radio" name="veicolo" id="bici">
+            </div>
+
+            <hr />
+            <div>
+                <label for="posizione-prenotazione">Dove vuoi stare?</label>
+                <!-- per creare una select sarà necessario avere l'elemento select con all'interno delle option ed eventuali optgroup -->
+                <select name="posizione" id="posizione-prenotazione">
+                    <optgroup label="posizione">
+                        <option>Dentro</option>
+                        <option>Fuori</option>
+                    </optgroup>
+                    <optgroup label="posizione">
+                        <option>Dentro</option>
+                        <option>Fuori</option>
+                    </optgroup>
+                </select>
+            </div>
+
+            <br />
+            <label for="note-prenotazione">
+                Note:
+            </label>
+            <br />
+            <textarea name="note" id="note-prenotazione" rows="8" style="width: 100%"
+                placeholder="Eventuali note scrivile qui"></textarea>
+        </fieldset>
+
+        <!-- il bottone invierà i dati solo se soddisferemo i valori dei campi "required" -->
+        <button type="submit">Invia prenotazione</button>
+    </form>
+</body>
+
+</html>
